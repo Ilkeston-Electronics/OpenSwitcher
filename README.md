@@ -28,7 +28,8 @@ J1 pin 1 is an alternative reset input which is "active low", settable in the mi
 P2 pins 1 and 3 are manual active high connections, which can be supplied with 3v - 5v (possibly 12v) (5v recommended) that switch the relay manually. Pin 1 if supplied with voltage will activate Q3 base which resets the relay. Pin 2 will activate Q4 base which sets the relay. The centre pin is +5v for convenience.
 
 # Optional bare minimum configuration
-If you fit CIA socket and underside pins and nothing else, you can fit header pins to the middle pins of the relay and it will function like a traditional manual switch.![bareminimum](https://user-images.githubusercontent.com/89555920/130951893-b6ab5bde-1879-4004-94aa-9b5d316510d3.jpg)
+If you fit CIA socket and underside pins and nothing else, you can fit header pins to the middle pins of the relay and it will function like a traditional manual switch.
+![bareminimum](https://user-images.githubusercontent.com/89555920/130951893-b6ab5bde-1879-4004-94aa-9b5d316510d3.jpg)
 
 # Parts List
 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
