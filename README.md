@@ -10,7 +10,7 @@ There are lots of (very simple) Amiga drive switcher projects out there. This on
 
 # Project Aims
 
-To build a quality Amiga drive swapper out of "off the shelf" parts, easily available and easily programmable.
+To build a quality Amiga drive swapper out of "off the shelf" parts, easily available and easily programmable. Also have the internal drive functioning as DF1 via correct drive ID timing during switching.
 
 # But why?
 Our Amigas deserve the best. All other drive swapping projects I have seen have the following caveats... Drilling holes, fitting switches, programming PIC chips, fitting surface-mount components, internal drive not working... This project aims to address all those.
