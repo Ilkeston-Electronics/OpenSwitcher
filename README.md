@@ -1,5 +1,5 @@
 # OpenSwitcher
-Amiga Microprocessor-controlled drive switcher
+Amiga Microprocessor-controlled drive switcher with DF1 internal drive support.
 ![openswitcher_final](https://user-images.githubusercontent.com/89555920/130957064-b8d7032a-a47f-4047-8594-877e5de32a28.jpg)
 ![openswitcher_final_pop](https://user-images.githubusercontent.com/89555920/130957066-e871e3a5-0786-46ad-b889-ba67169dd9b5.jpg)
 
