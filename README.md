@@ -1,3 +1,5 @@
+# DISCLAIMER 
+# This should be considered BETA as I am not perfect. Not got any prototype boards yet, so was built on breadboard and worked fine. Highly recommended to WAIT UNTIL THE FIRST BATCH OF BOARDS COME TO ME and I have correctly tested. I take no responsibility for damage or faults arising from this project, especially in its beta status.
 # OpenSwitcher
 Amiga Microprocessor-controlled drive switcher with DF1 internal drive support.
 ![openswitcher_final](https://user-images.githubusercontent.com/89555920/130957064-b8d7032a-a47f-4047-8594-877e5de32a28.jpg)
