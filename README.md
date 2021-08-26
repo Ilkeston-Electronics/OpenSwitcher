@@ -32,13 +32,26 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 
 # Parts List
 1 x 40 pin DIP dual wipe IC socket or female - male turned pins (2x20 pin strips)
+
+2 x 20 pin male - male turned pin strips
+
 V23079-B1201-B301 or HFD3/005-L2 (HFD3/005-L1 is NOT SUITABLE as it only has 1 coil) or similar 5v dual coil DPDT relay.
+
 3 x KSP2222 or similar NPN BJT transistor
+
 3 x 1Kohm 1/4 watt resistors
+
 2 x 1n4148 or similar diodes
+
 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
+
+1 x 2 pin header 2.54mm pitch
+
 1 x 250ohm - 1k ohm resistor for LED current limiting (optional)
-2 x 2.54 pitch generic LED
+
+2 x 2.54 pitch generic LED (optional)
+
+1 x 3 pin header 2.54mm pitch (optional)
 
 
 
