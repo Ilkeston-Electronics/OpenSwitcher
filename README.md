@@ -31,9 +31,9 @@ P2 pins 1 and 3 are manual active high connections, which can be supplied with 3
 If you fit CIA socket and underside pins and nothing else, you can fit header pins to the middle pins of the relay and it will function like a traditional manual switch.![bareminimum](https://user-images.githubusercontent.com/89555920/130951893-b6ab5bde-1879-4004-94aa-9b5d316510d3.jpg)
 
 # Parts List
-1 x 40 pin DIP dual wipe IC socket or female - male turned pins (2x20 pin strips)
+1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 
-2 x 20 pin male - male turned pin strips
+2 x 20 pin male-male turned pin strips
 
 V23079-B1201-B301 or HFD3/005-L2 (HFD3/005-L1 is NOT SUITABLE as it only has 1 coil) or similar 5v dual coil DPDT relay.
 
@@ -46,6 +46,8 @@ V23079-B1201-B301 or HFD3/005-L2 (HFD3/005-L1 is NOT SUITABLE as it only has 1 c
 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 
 1 x 2 pin header 2.54mm pitch
+
+1 x DuPont cable female-soldered end
 
 1 x 250ohm - 1k ohm resistor for LED current limiting (optional)
 
