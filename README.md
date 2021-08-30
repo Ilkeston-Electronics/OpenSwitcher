@@ -23,7 +23,7 @@ Amigas are very fussy about which drive we run from. DF1 is a bootable drive, bu
 How does this work?
 OK... There are 2 lines we need to swap, which are SEL0 and SEL1. Simple enough...
 
-This project uses an Adafruit Trinket microcontroller (5v, 3.3v or M0 is fine - all will be supported), 3 transistors and a latching relay.
+This project uses an Adafruit Trinket M0 microcontroller.
 
 This uses a relay so any signal is "pure", ie it is just like swapping the SEL points with solder or a switch. The SEL signal is passed through the relay just as it left the CIA.
 This switching is controlled by the Trinket, which has levels corrected by the transistors, which then goes to the relays.
