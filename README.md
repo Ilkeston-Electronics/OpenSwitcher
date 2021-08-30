@@ -36,7 +36,7 @@ This switching is controlled by the Trinket, which has levels corrected by the t
 # Optional bare minimum configuration
 If you fit CIA socket and underside pins and nothing else, you can fit header pins to the middle pins of the relay and it will function like a traditional manual switch.
 
-![bareminimum](https://user-images.githubusercontent.com/89555920/130951893-b6ab5bde-1879-4004-94aa-9b5d316510d3.jpg)
+![openswitcher_pcb_simp_conf](https://user-images.githubusercontent.com/89555920/131317484-1bed9aa9-6bf9-468c-a090-e554a4068bd4.png)
 
 # Parts List
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
