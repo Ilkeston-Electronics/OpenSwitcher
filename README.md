@@ -9,7 +9,7 @@ Amiga Microprocessor-controlled drive switcher with DF1 internal drive support.
 
 # Description
 
-There are lots of (very simple) Amiga drive switcher projects out there. This one intends to be a little different. Driven by logic and very simple code, designed to be user buildable and programmable, with no fancy programmers required. If you have USB, you can program this with a single file!
+There are lots of (very simple) Amiga drive switcher projects out there. This one intends to be a little different. Driven by logic and very simple code, designed to be user buildable and programmable, with no fancy programmers required. If you have USB, you can program this with a single file! Tested with A500 plus and kickstarts v2.04, v2.05, v3.1 and v3.1.4. Compatible with Pistorm (though pistorm has its own swapping system).
 
 # Project Aims
 
