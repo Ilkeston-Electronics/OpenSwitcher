@@ -40,7 +40,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 
 ![openswitcher_pcb_simp_conf](https://user-images.githubusercontent.com/89555920/131317484-1bed9aa9-6bf9-468c-a090-e554a4068bd4.png)
 
-# Parts List - Phat version
+# Parts List - Large Through-hole version
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 * 2 x 20 pin male-male turned pin strips
 * HFD3/5 5v non latching relay or Kemet EC2/EE2 relay or similar
@@ -52,7 +52,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
 
-# Component Locations - Phat Through-hole version
+# Component Locations - Large Through-hole version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
 * U2 - Male - male turned pin
 * RL1 - HFD3/5 or other chosen relay
