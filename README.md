@@ -53,7 +53,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Component Locations
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
 * U2 - Male - male turned pin
-* RL1 - HFD3/5 relay
+* RL1 - HFD3/5 or other chosen relay
 * D1 - 1N4148 diode
 * R1 - 150R resistor
 * R2, R3, R4 - 1K resistor
