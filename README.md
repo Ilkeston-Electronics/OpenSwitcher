@@ -72,6 +72,6 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * Complete
 
 # Usage
-* To swap internal drive to DF1 and external to DF0, hold down [CTRL] [AMIGA] [AMIGA] until white LED shows then let go of keys.
-* To swap internal drive to DF0 and external to DF1 (default, stock), hold down [CTRL] [AMIGA] [AMIGA] until yellow LED shows then let go of keys.
+* To swap internal drive to DF1 and external to DF0, hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until white LED shows then let go of keys.
+* To swap internal drive to DF0 and external to DF1 (default, stock), hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until yellow LED shows then let go of keys.
 * After 3 seconds, mode will be active.
