@@ -4,6 +4,8 @@
 Amiga Microprocessor-controlled drive switcher with DF1 internal drive support.
 
 ![openswitcher_pcb](https://user-images.githubusercontent.com/89555920/131311874-8140f8ab-ed11-46ad-838c-ce0a1a964648.png)
+![openswitcher_pcb_smd_211s](https://user-images.githubusercontent.com/89555920/131362737-b4111971-3445-4ebe-80f9-1cbb9642c00e.png)
+
 
 
 
