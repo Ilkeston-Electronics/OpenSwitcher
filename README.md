@@ -1,9 +1,9 @@
 # DISCLAIMER 
-# This should be considered BETA as I am not perfect. Not got any prototype boards yet, so was built on breadboard and worked fine. Highly recommended to WAIT UNTIL THE FIRST BATCH OF BOARDS COME TO ME and I have correctly tested. I take no responsibility for damage or faults arising from this project, especially in its beta status.
+* This project should be considered BETA. You decide to make and fit this. I will not take responsibility for any damage, however caused.
 # OpenSwitcher
 Amiga Microprocessor-controlled drive switcher with DF1 internal drive support.
-![openswitcher_final](https://user-images.githubusercontent.com/89555920/130957064-b8d7032a-a47f-4047-8594-877e5de32a28.jpg)
-![openswitcher_final_pop](https://user-images.githubusercontent.com/89555920/131011823-c74e692c-fe98-4dcf-be03-e5e12c7ef36c.jpg)
+
+![openswitcher_pcb](https://user-images.githubusercontent.com/89555920/131311874-8140f8ab-ed11-46ad-838c-ce0a1a964648.png)
 
 
 
@@ -25,13 +25,13 @@ OK... There are 2 lines we need to swap, which are SEL0 and SEL1. Simple enough.
 
 This project uses an Adafruit Trinket microcontroller (5v, 3.3v or M0 is fine - all will be supported), 3 transistors and a latching relay.
 
-This uses a latching relay so any signal is "pure", ie it is just like swapping the SEL points with solder or a switch. The SEL signal is passed through the relay just as it left the CIA.
+This uses a relay so any signal is "pure", ie it is just like swapping the SEL points with solder or a switch. The SEL signal is passed through the relay just as it left the CIA.
 This switching is controlled by the Trinket, which has levels corrected by the transistors, which then goes to the relays.
 
-Q4 and Q3 bases connect to microcontroller GPIO, which in turn switch SET and RESET on the relay accordingly.
-Q1 base is connected to J1 pin 2 and this connects to the Amiga reset line from the keyboard (active high).
-J1 pin 1 is an alternative reset input which is "active low", settable in the microcontroller software.
-P2 pins 1 and 3 are manual active high connections, which can be supplied with 3v - 5v (possibly 12v) (5v recommended) that switch the relay manually. Pin 1 if supplied with voltage will activate Q3 base which resets the relay. Pin 2 will activate Q4 base which sets the relay. The centre pin is +5v for convenience.
+* Q2 and Q3 are sel0 / sel1 sensor lines. Only sel0 sensor line is used at the time of writing.
+* Q1 base is connected to relay coil Upon a base positive voltage, coil - GND goes low resistance, switching on the relay.
+* J1 is J_RST_LINE. Pin 1 default not connected. Pin 2 monitors keyboard reset line. If high, returns low to microcontroller. If using / testing without keyboard reset line connected, jumper to pin 1 to stop automatic rebooting and eeprom writing of microcontroller.
+* JP1 is manual override. Default jumper - unconnected or 2-3. If 1-2 is linked, this sets permanent swap of DF0 and DF1, disabling long-press reset to switch modes.
 
 # Optional bare minimum configuration
 If you fit CIA socket and underside pins and nothing else, you can fit header pins to the middle pins of the relay and it will function like a traditional manual switch.
@@ -39,32 +39,25 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 ![bareminimum](https://user-images.githubusercontent.com/89555920/130951893-b6ab5bde-1879-4004-94aa-9b5d316510d3.jpg)
 
 # Parts List
-1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
+* 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
+* 2 x 20 pin male-male turned pin strips
+* HFD3/5 5v non latching relay or similar
+* 4 x KSP2222 or similar NPN BJT transistor
+* 3 x 1Kohm 1/4 watt resistors
+* 1 x 150R 1/4 watt resistor
+* 1 x 1n4148 or similar diode
+* 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
+* 1 x 2 pin header 2.54mm pitch
+* 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
 
-2 x 20 pin male-male turned pin strips
-
-V23079-B1201-B301 or HFD3/005-L2 (HFD3/005-L1 is NOT SUITABLE as it only has 1 coil) or similar 5v dual coil DPDT relay.
-
-3 x KSP2222 or similar NPN BJT transistor
-
-3 x 1Kohm 1/4 watt resistors
-
-2 x 1n4148 or similar diodes
-
-1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
-
-1 x 2 pin header 2.54mm pitch
-
-1 x DuPont cable female-soldered end
-
-1 x 250ohm - 1k ohm resistor for LED current limiting (optional)
-
-2 x 2.54 pitch generic LED (optional)
-
-1 x 3 pin header 2.54mm pitch (optional)
-
-
-
-
-
-
+# Component Locations
+* U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
+* U2 - Male - male turned pin
+* RL1 - HFD3/5 relay
+* D1 - 1N4148 diode
+* R1 - 150R resistor
+* R2, R3, R4 - 1K resistor
+* Q1, Q2, Q3, Q4 - KSP2222 npn BJT transistor(600mA, 40v)
+* P1 - Adafruit Trinket M0
+* J1 - 1 x 2 header pin
+* JP1 - 1 x 3 header pin (optional)
