@@ -41,7 +41,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Parts List
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 * 2 x 20 pin male-male turned pin strips
-* HFD3/5 5v non latching relay or similar
+* HFD3/5 5v non latching relay or Kemet EC2/EE2 relay or similar
 * 4 x KSP2222 or similar NPN BJT transistor
 * 3 x 1Kohm 1/4 watt resistors
 * 1 x 150R 1/4 watt resistor
