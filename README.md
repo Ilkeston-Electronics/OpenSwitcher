@@ -48,6 +48,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
+* 3 x 5 male pin header (2.54mm pitch)
 
 # Component Locations - Large Through-hole version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
@@ -72,6 +73,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
+* 3 x 5 male pin header (2.54mm pitch)
 
 # Component Locations - Slim SMD version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
