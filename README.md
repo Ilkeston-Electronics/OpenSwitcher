@@ -1,12 +1,6 @@
-# DISCLAIMER 
-* This project should be considered BETA. You decide to make and fit this. I will not take responsibility for any damage, however caused.
-# OpenSwitcher
-Amiga Microprocessor-controlled drive switcher with DF1 internal drive support. Optional SMD small version.
+Latest firmware in releases.
 
 ![openswitcher_pcb](https://user-images.githubusercontent.com/89555920/131364570-9ceae697-955a-4a23-86cf-ef9d193c676b.png)
-
-
-
 
 
 # Description
@@ -98,6 +92,11 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * Complete
 
 # Usage
-* To swap internal drive to DF1 and external to DF0, hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until white LED shows then let go of keys.
-* To swap internal drive to DF0 and external to DF1 (default, stock), hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until yellow LED shows then let go of keys.
+* To swap internal drive to DF1 and external to DF0, hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until green LED flashes LED shows then let go of keys.
+* To swap internal drive to DF0 and external to DF1 (default, stock), hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until blue LED flashes then let go of keys.
 * After 3 seconds, mode will be active.
+
+# DISCLAIMER 
+* This project should be considered BETA. You decide to make and fit this. I will not take responsibility for any damage, however caused.
+# OpenSwitcher
+Amiga Microprocessor-controlled drive switcher with DF1 internal drive support. Optional SMD small version.
