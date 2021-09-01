@@ -1,4 +1,7 @@
-Latest firmware in releases.
+# OpenSwitcher
+Amiga Microprocessor-controlled drive switcher with DF1 internal drive support. Optional SMD small version.
+
+#Latest firmware in releases.
 
 ![openswitcher_pcb](https://user-images.githubusercontent.com/89555920/131364570-9ceae697-955a-4a23-86cf-ef9d193c676b.png)
 
@@ -98,5 +101,4 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 
 # DISCLAIMER 
 * This project should be considered BETA. You decide to make and fit this. I will not take responsibility for any damage, however caused.
-# OpenSwitcher
-Amiga Microprocessor-controlled drive switcher with DF1 internal drive support. Optional SMD small version.
+
