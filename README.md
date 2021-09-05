@@ -40,10 +40,10 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Parts List - Large Through-hole version
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 * 2 x 20 pin male-male turned pin strips
-* HFD3/5 5v non latching relay or Kemet EC2/EE2 relay or similar
+* Relay (see below)
 * 4 x KSP2222 or similar NPN BJT transistor
 * 3 x 1Kohm 1/4 watt resistors
-* 1 x 150R 1/4 watt resistor
+* 1 x 470R 1/4 watt resistor
 * 1 x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
@@ -53,9 +53,9 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Component Locations - Large Through-hole version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
 * U2 - Male - male turned pin
-* RL1 - HFD3/5 or other chosen relay
+* RL1 - Relay (see below)
 * D1 - 1N4148 diode
-* R1 - 150R resistor
+* R1 - 470R resistor
 * R2, R3, R4 - 1K resistor
 * Q1, Q2, Q3, Q4 - KSP2222 npn BJT transistor(600mA, 40v)
 * P1 - Adafruit Trinket M0
@@ -65,11 +65,11 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Parts List - Slim SMD version
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 * 2 x 20 pin male-male turned pin strips
-* IM03TS / G6K-2P-DC5 or other chosen relay or similar
+* Relay (see below)
 * 4 x BC817-40 npn BJT transistor
 * 3 x 1Kohm 1206 0.25w resistor
-* 1 x 150R 1206 0.25w resistor
-* 1 x 1n4148 or similar diode
+* 1 x 470R 1206 0.25w resistor
+* 2 x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
@@ -78,14 +78,27 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Component Locations - Slim SMD version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
 * U2 - Male - male turned pin
-* K1 - IM03TS / G6K-2P-DC5 or other chosen relay
-* D1 - 1N4148 diode
-* R1 - 150R 1206 0.25w resistor
+* K1 - Relay (see below)
+* D1, D2 - 1N4148 diode
+* R1 - 470R 1206 0.25w resistor
 * R2, R3, R4 - 1K 1206 0.25w resistor
 * Q1, Q2, Q3, Q4 - BC817-40 npn BJT transistor(500mA, 45v)
 * P1 - Adafruit Trinket M0
 * J1 - 1 x 2 header pin
 * JP1 - 1 x 3 header pin (optional)
+
+# Supported relays
+* Any 5v relay that will fit into the footprint
+# Latching relays (need D2, R5 and Q5 fitting - use LT firmware)
+* Panasonic TX2-L-5V / TX2-L2-5V
+* Hongfa HFD3/005-L2
+* Kemet EE2-5T
+# Non-Latching relays (use S firmware)
+* TE Connectivity IM03TS
+* TE Connectivity 1-1462038-3
+* Omron G6K2P5DC
+* Omron G6K-2P-Y 5DC
+* Hongfa HFD4/005
 
 # User Guide
 * Remove even CIA from motherboard and fit into OpenSwitcher, ensuring correct orientation. Fit OpenSwitcher back into motherboard, ensuring pins are sitting in CIA socket.
