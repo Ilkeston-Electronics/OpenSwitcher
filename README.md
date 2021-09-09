@@ -41,10 +41,10 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 * 2 x 20 pin male-male turned pin strips
 * Relay (see below)
-* 4 x KSP2222 or similar NPN BJT transistor
+* 4 (or 5) x KSP2222 or similar NPN BJT transistor
 * 3 x 1Kohm 1/4 watt resistors
-* 1 x 470R 1/4 watt resistor
-* 1 x 1n4148 or similar diode
+* 1 (or 2) x 470R 1/4 watt resistor
+* 1 (or 2) x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
@@ -54,10 +54,10 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
 * U2 - Male - male turned pin
 * RL1 - Relay (see below)
-* D1 - 1N4148 diode
-* R1 - 470R resistor
+* D1, D2 - 1N4148 diode
+* R1, R5 - 470R resistor
 * R2, R3, R4 - 1K resistor
-* Q1, Q2, Q3, Q4 - KSP2222 npn BJT transistor(600mA, 40v)
+* Q1, Q2, Q3, Q4, Q5 - KSP2222 npn BJT transistor(600mA, 40v)
 * P1 - Adafruit Trinket M0
 * J1 - 1 x 2 header pin
 * JP1 - 1 x 3 header pin (optional)
@@ -66,9 +66,9 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x 40 pin DIP dual wipe IC socket or female-male turned pins (2x20 pin strips)
 * 2 x 20 pin male-male turned pin strips
 * Relay (see below)
-* 4 x BC817-40 npn BJT transistor
+* 4 (or 5) x BC817-40 npn BJT transistor
 * 3 x 1Kohm 1206 0.25w resistor
-* 1 x 470R 1206 0.25w resistor
+* 1 (or 2) x 470R 1206 0.25w resistor
 * 2 x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
@@ -81,24 +81,29 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * K1 - Relay (see below)
 * D1, D2 - 1N4148 diode
 * R1 - 470R 1206 0.25w resistor
-* R2, R3, R4 - 1K 1206 0.25w resistor
-* Q1, Q2, Q3, Q4 - BC817-40 npn BJT transistor(500mA, 45v)
+* R2, R3, R4, R5 - 1K 0402 0.06w resistor
+* Q1, Q2, Q3, Q4, Q5 - BC817-40 npn BJT transistor(500mA, 45v)
 * P1 - Adafruit Trinket M0
 * J1 - 1 x 2 header pin
 * JP1 - 1 x 3 header pin (optional)
 
 # Supported relays
 * Any 5v relay that will fit into the footprint
-# Latching relays (need D2, R5 and Q5 fitting - use LT firmware)
+# Latching relays (need D2, R5 and Q5 fitting)
 * Panasonic TX2-L-5V / TX2-L2-5V
 * Hongfa HFD3/005-L2
 * Kemet EE2-5T
-# Non-Latching relays (use S firmware)
+# Non-Latching relays
 * TE Connectivity IM03TS
 * TE Connectivity 1-1462038-3
 * Omron G6K2P5DC
 * Omron G6K-2P-Y 5DC
 * Hongfa HFD4/005
+
+# Notes about relays
+* You can either use a latching or non-latching relay. Please pay attention to the following points.
+* If using a non-latching relay, no need to fit D2, R5 or Q5. JP1 should remain open and unlinked.
+* If using latching relay, D2, R5 and Q5 is required to set / reset relay. JP1 should be linked where indicated on the board.
 
 # User Guide
 * Remove even CIA from motherboard and fit into OpenSwitcher, ensuring correct orientation. Fit OpenSwitcher back into motherboard, ensuring pins are sitting in CIA socket.
@@ -110,10 +115,20 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * Complete
 
 # Usage
-* To swap internal drive to DF1 and external to DF0, hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until green LED flashes LED shows then let go of keys.
-* To swap internal drive to DF0 and external to DF1 (default, stock), hold down [CTRL] [AMIGA] [AMIGA] for 3 seconds until blue LED flashes then let go of keys.
-* After 3 seconds, mode will be active.
+* Operating Guide
 
+* >>>>>>START<<<<<<
+* Upon power on, unconnected (ie plugged into PC), red light will be flashing. This means successfully flashed... Please plug into OpenSwitcher.
+* ------------------------------
+* This will ONLY HAPPEN ONCE on FIRST INSTALL INTO OpenSwitcher! Upon Amiga power-on, white LED should flash 3 times. Identify relay, program virtual Eeprom with default values. When white LED flash 3 times This indicates setup is correct.
+* ------------------------------
+* Upon Green LED, drive ID successful, booting in a stock unswapped condition
+* Upon Blue LED, drive ID successful, booting in swapped condition.
+* LED off after 8 seconds approx = OpenSwitcher is asleep.
+
+* Upon Amiga RESET, pink LED, reboot successful, go back to start.
+* If Amiga RESET is HELD for approx 3 seconds, White LED will blink 3 times. If in a swapped condition, will become unswapped. If unswapped, will be swapped. Stored to Eeprom.
+* That is all
 # DISCLAIMER 
 * This project should be considered BETA. You decide to make and fit this. I will not take responsibility for any damage, however caused.
 
