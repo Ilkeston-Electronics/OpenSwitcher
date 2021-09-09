@@ -31,7 +31,7 @@ This switching is controlled by the Trinket, which has levels corrected by the t
 * Q2 and Q3 are sel0 / sel1 sensor lines. Only sel0 sensor line is used at the time of writing.
 * Q1 base is connected to relay coil Upon a base positive voltage, coil - GND goes low resistance, switching on the relay.
 * J1 is J_RST_LINE. Pin 1 default not connected. Pin 2 monitors keyboard reset line. If high, returns low to microcontroller. If using / testing without keyboard reset line connected, jumper to pin 1 to stop automatic rebooting and eeprom writing of microcontroller.
-* JP1 is manual override. Default jumper - unconnected or 2-3. If 1-2 is linked, this sets permanent swap of DF0 and DF1, disabling long-press reset to switch modes.
+* JP1 is used as part of a latching relay system. Link points marked on board if using a latching relay
 
 # Optional bare minimum configuration
 If you fit CIA socket and underside pins and nothing else, you can fit header pins to the middle pins of the relay and it will function like a traditional manual switch.
@@ -69,8 +69,8 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 2 x 20 pin male-male turned pin strips
 * Relay (see below)
 * 4 (or 5) x BC817-40 npn BJT transistor
-* 3 x 1Kohm 1206 0.25w resistor
-* 1 (or 2) x 470R 1206 0.25w resistor
+* 3 x 1Kohm 0402 0.06w resistor
+* 1 (or 2) x 0402 0.06w 0.25w resistor
 * 2 x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
@@ -83,8 +83,8 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * U2 - Male - male turned pin
 * K1 - Relay (see below)
 * D1, D2 - 1N4148 diode
-* R1 - 470R 1206 0.25w resistor
-* R2, R3, R4, R5 - 1K 0402 0.06w resistor
+* R1, R5 - 470R 0402 0.06w resistor
+* R2, R3, R4 - 1K 0402 0.06w resistor
 * Q1, Q2, Q3, Q4, Q5 - BC817-40 npn BJT transistor(500mA, 45v)
 * P1 - Adafruit Trinket M0
 * J1 - 1 x 2 header pin
