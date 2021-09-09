@@ -71,7 +71,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * Relay (see below)
 * 4 (or 5) x BC817-40 npn BJT transistor
 * 3 x 1Kohm 0402 0.06w resistor
-* 1 (or 2) x 0402 0.06w 0.25w resistor
+* 1 (or 2) x 0402 0.06w resistor
 * 2 x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
