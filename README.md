@@ -30,7 +30,7 @@ This uses a relay so any signal is "pure", ie it is just like swapping the SEL p
 This switching is controlled by the Trinket, which has levels corrected by the transistors, which then goes to the relays.
 
 * Q2 and Q3 are sel0 / sel1 sensor lines. Only sel0 sensor line is used at the time of writing.
-* Q1 base is connected to relay coil Upon a base positive voltage, coil - GND goes low resistance, switching on the relay.
+* Q1 base (and Q5 if fitted) is connected to relay coil Upon a base positive voltage, coil - GND goes low resistance, switching on the relay.
 * J1 is J_RST_LINE. Pin 1 default not connected. Pin 2 monitors keyboard reset line. If high, returns low to microcontroller. If using / testing without keyboard reset line connected, jumper to pin 1 to stop automatic rebooting and eeprom writing of microcontroller.
 * JP1 is used as part of a latching relay system. Link points marked on board if using a latching relay
 
