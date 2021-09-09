@@ -120,18 +120,15 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 # Usage
 * Operating Guide
 
-* START<<<<<<
+* START
 * Upon power on, unconnected (ie plugged into PC), red light will be flashing. This means successfully flashed... Please plug into OpenSwitcher.
-* 
 * This will ONLY HAPPEN ONCE on FIRST INSTALL INTO OpenSwitcher! Upon Amiga power-on, white LED should flash 3 times. Identify relay, program virtual Eeprom with default values. When white LED flash 3 times This indicates setup is correct.
-* 
 * Upon Green LED, drive ID successful, booting in a stock unswapped condition
 * Upon Blue LED, drive ID successful, booting in swapped condition.
 * LED off after 8 seconds approx = OpenSwitcher is asleep.
-*
 * Upon Amiga RESET, pink LED, reboot successful, go back to start.
 * If Amiga RESET is HELD for approx 3 seconds, White LED will blink 3 times. If in a swapped condition, will become unswapped. If unswapped, will be swapped. Stored to Eeprom.
 * That is all
 # DISCLAIMER 
-* This project should be considered BETA. You decide to make and fit this. I will not take responsibility for any damage, however caused.
+* This project should be considered BETA. You only have yourself to blame. You decide to make and fit this. I will not take responsibility for any damage, however caused. Though I will try to help.
 
