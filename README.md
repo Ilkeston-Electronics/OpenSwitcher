@@ -110,8 +110,8 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 
 # User Guide
 * Remove even CIA from motherboard and fit into OpenSwitcher, ensuring correct orientation. Fit OpenSwitcher back into motherboard, ensuring pins are sitting in CIA socket.
-* Fit wire from J1 pin 2 (nearest to Trinket) to CN13 pin 3 (keyboard header). It should be piggybacked onto the connection. Don't cut any wires! Or if you do cut, make sure you join them together again
-* Ensure Trinket is NOT PLUGGED IN to OpenSwitcher
+* Fit wire from J1 pin 2 (marked on board) to CN13 pin 3 (keyboard header). It should be piggybacked onto the connection. Don't cut any wires! Or if you do cut, make sure you join them together again
+* Ensure Trinket is NOT PLUGGED IN to OpenSwitcher or CIA is removed from OpenSwitcher (I haven't had any failed CIA chips during flashing, but better to be safe)
 * Download software and plug in Trinket. A drive will open
 * Drag and drop downloaded UF2 file to this drive. Wait for lights to go out on device then disconnect.
 * Fit Trinket onto OpenSwitcher as the image on the OpenSwitcher board
