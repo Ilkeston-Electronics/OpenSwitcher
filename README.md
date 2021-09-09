@@ -3,7 +3,8 @@ Amiga Microprocessor-controlled drive switcher with DF1 internal drive support. 
 
 # Latest firmware in releases.
 
-![openswitcher_pcb](https://user-images.githubusercontent.com/89555920/131364570-9ceae697-955a-4a23-86cf-ef9d193c676b.png)
+![OpenSwitcher_Final](https://user-images.githubusercontent.com/89555920/132751234-ff0f4966-17bc-42ac-8236-0587b59d51c2.png)
+
 
 
 # Description
@@ -48,7 +49,8 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
-* 3 x 5 male pin header (2.54mm pitch)
+* 2 x 5 male pin header (2.54mm pitch supplied with Trinket)
+* 2 x 5 female pin header (2.54mm pitch to plug Trinket in to, or solder Trinket into board)
 
 # Component Locations - Large Through-hole version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
@@ -73,7 +75,8 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
-* 3 x 5 male pin header (2.54mm pitch)
+* 2 x 5 male pin header (2.54mm pitch supplied with Trinket)
+* 2 x 5 female pin header (2.54mm pitch to plug Trinket in to, or solder Trinket into board)
 
 # Component Locations - Slim SMD version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
