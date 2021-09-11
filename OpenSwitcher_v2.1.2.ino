@@ -38,11 +38,6 @@ static bool swapactive;
 static bool relaylatching;
 
 
-void halt_result()
-{
-  led_flash(64, 0, 0, 1, 50000, 950000);
-}
-
 void led_show(const int red, const int green, const int blue)
 {
   strip.setPixelColor(0, red, green, blue);
@@ -91,7 +86,7 @@ int setup_system()
   if (sys_prep.read() == 1) return 0;
   else
   {
-    led_show(0,0,0);
+    led_show(0, 0, 0);
     pinMode(relaypin2, INPUT_PULLUP);
     if (digitalRead(relaypin2) == LOW) relay_latching.write(1);
     else relay_latching.write(0);
@@ -128,7 +123,7 @@ void standby()
                       );
   while (GCLK->STATUS.bit.SYNCBUSY) {}
 
-  __DSB(); 
+  __DSB();
   __WFI();
 }
 
@@ -137,45 +132,7 @@ void reset()
   SCB->AIRCR = ((0x5FA << SCB_AIRCR_VECTKEY_Pos) | SCB_AIRCR_SYSRESETREQ_Msk);
 }
 
-int reset_handler()
-{
-  static bool swapactive = read_eeprom_drive();
-  if (digitalRead(switch_request) == HIGH)
-  {
-    ticktimer1 = millis();
-    while (digitalRead(switch_request) == HIGH)
-    {
-      ticktimer2 = millis();
-      if (swapactive) led_show(0, 64, 0); else led_show(0, 0, 64);
-
-      if (ticktimer2 >= (ticktimer1 + RESET_SWAP_TIMEOUT))
-        if (swapactive) led_flash(0, 0, 64, 2, 200000, 0);
-        else led_flash(0, 64, 0, 2, 200000, 0);
-      write_eeprom(swapactive);
-      return 0;
-    }
-    return 1;
-  }
-}
-
-int id_drive()
-{
-  //wait for sel0 to drop(ie during drive ID)
-  //Speed of even CIA clock (709379hz PAL)(715909 NTSC), Assuming 1 bit per cycle = period of 1.409(pal), 1.396(ntsc) x 32 = 45088/2(pull lines low, read value on next) = 22524 pal, 22336 ntsc.
-  //Allow 23000 uS per bit.
-  while (digitalRead(cia_sel0) == LOW);
-
-  for (int id_counter = 0; id_counter <= 32; ++id_counter)
-  {
-    while (digitalRead(cia_sel0) == HIGH);
-    //while(digitalRead(cia_sel0) == LOW);
-    delayMicroseconds(23000);
-    if (id_counter < 32) return 1;
-  }
-  return 0;
-}
-
-int startup_halt_requests()
+int startup_request_pause()
 {
   static int halt_request = 0;
   pinMode(cia_sel0, INPUT_PULLUP);
@@ -191,11 +148,11 @@ int startup_halt_requests()
 void setup()
 {
   led_show(0, 0, 0);
-  static int startup_halt = 0;
-  startup_halt = startup_halt_requests();
-  if (startup_halt)
+  static int startup_pause = 0;
+  startup_pause = startup_request_pause();
+  if (startup_pause)
   {
-    while (true) halt_result();
+    while (true) led_flash(64, 0, 0, 1, 50000, 950000);
   }
   pinMode(relaypin1, OUTPUT);
 
@@ -241,7 +198,7 @@ void loop() {
 
         }
         led_flash (64, 64, 64, 3, 100000, 333333);
-        
+
         reset();
       }
     }
@@ -251,17 +208,7 @@ void loop() {
   relaylatching = read_eeprom_relay();
 
   while (digitalRead(cia_sel0) == LOW);
-  {
-
-  for (int id_counter = 0; id_counter < 64; ++id_counter)
-  {
-    while (digitalRead(cia_sel0) == RISING);
-    delayMicroseconds(10000);
-    while(digitalRead(cia_sel0) == FALLING);
-    delayMicroseconds(10000);
-    if ((id_counter > 31) && (digitalRead(cia_sel0) == LOW)) break;
-  }
-
+  delayMicroseconds(690);
 
   if (swapactive)
   {
@@ -293,11 +240,11 @@ void loop() {
   delayMicroseconds(500000);
   if (swapactive) led_show(0, 0, 64);
   else led_show(0, 64, 0);
-  
+
   while (ticktimer2 <= (ticktimer1 + 8000))
   {
     ticktimer2 = millis();
   }
-    led_show(0,0,0);
-    standby();
+  led_show(0, 0, 0);
+  standby();
 }
