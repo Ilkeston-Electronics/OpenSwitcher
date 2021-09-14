@@ -126,6 +126,9 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * Upon Amiga RESET, pink LED, reboot successful, go back to start.
 * If Amiga RESET is HELD for approx 3 seconds, White LED will blink 3 times. If in a swapped condition, will become unswapped. If unswapped, will be swapped. Stored to Eeprom.
 * That is all
+
+# ADDENDUM
+* There is a silk screen printing error on rev 2.1.2 boards. KB_RST and 5V are the wrong way around. No damage can be caused by connecting them "incorrectly" but the Amiga will stay in RESET if they are connected the wrong way.
 # DISCLAIMER 
 * This project should be considered BETA. You only have yourself to blame. You decide to make and fit this. I will not take responsibility for any damage, however caused. Though I will try to help.
 
