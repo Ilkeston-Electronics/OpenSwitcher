@@ -128,7 +128,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * That is all
 
 # ADDENDUM
-* There is a silk screen printing error on rev 2.1.2 boards. KB_RST and 5V are the wrong way around. No damage can be caused by connecting them "incorrectly" but the Amiga will stay in RESET if they are connected the wrong way.
+* There is a silk screen printing error on rev 2.1.2 boards. KB_RST and 5V are the wrong way around. No damage can be caused by connecting them "incorrectly" but the Amiga will stay in RESET if they are connected the wrong way due to the RESET line being held at 5V (the Amiga will only come out of reset when reset line isn't at 5v). Just swap them round.
 # DISCLAIMER 
 * This project should be considered BETA. You only have yourself to blame. You decide to make and fit this. I will not take responsibility for any damage, however caused. Though I will try to help.
 
