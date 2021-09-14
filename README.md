@@ -44,8 +44,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 2 x 20 pin male-male turned pin strips
 * Relay (see below)
 * 4 (or 5) x KSP2222 or similar NPN BJT transistor
-* 3 x 1Kohm 1/4 watt resistors
-* 1 (or 2) x 470R 1/4 watt resistor
+* 4 (or 5) 1/8 watt resistors (if you can find them. 1/4 watt if not).
 * 1 (or 2) x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
@@ -58,8 +57,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * U2 - Male - male turned pin
 * RL1 - Relay (see below)
 * D1, D2 - 1N4148 diode
-* R1, R5 - 470R resistor
-* R2, R3, R4 - 1K resistor
+* R1, R2, R3, R4, R5 - 1K resistor
 * Q1, Q2, Q3, Q4, Q5 - KSP2222 npn BJT transistor(600mA, 40v)
 * P1 - Adafruit Trinket M0
 * J1 - 1 x 2 header pin
@@ -70,8 +68,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 2 x 20 pin male-male turned pin strips
 * Relay (see below)
 * 4 (or 5) x BC817-40 npn BJT transistor
-* 3 x 1Kohm 0402 0.06w resistor
-* 1 (or 2) x 0402 0.06w resistor
+* 4 (or 5) 1Kohm 0402 0.06w resistor
 * 2 x 1n4148 or similar diode
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
@@ -84,8 +81,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * U2 - Male - male turned pin
 * K1 - Relay (see below)
 * D1, D2 - 1N4148 diode
-* R1, R5 - 470R 0402 0.06w resistor
-* R2, R3, R4 - 1K 0402 0.06w resistor
+* R1, R2, R3, R4, R5 - 1K 0402 0.06w resistor
 * Q1, Q2, Q3, Q4, Q5 - BC817-40 npn BJT transistor(500mA, 45v)
 * P1 - Adafruit Trinket M0
 * J1 - 1 x 2 header pin
