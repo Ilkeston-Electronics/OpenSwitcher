@@ -1,5 +1,6 @@
 # OpenSwitcher
 Amiga Microprocessor-controlled drive switcher with DF1 internal drive support. Optional SMD small version.
+For Amiga 600 and 1200 version that doesn't use the CIA of early Amigas, check [OpenSwitcher-1200](https://github.com/Ilkeston-Electronics/OpenSwitcher-1200)
 
 # Latest firmware in releases. Read the ADDENDUM at the bottom of this page.
 
