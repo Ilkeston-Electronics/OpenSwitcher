@@ -106,6 +106,13 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * If using a non-latching relay, no need to fit D2, R5 or Q5. JP1 should remain open and unlinked.
 * If using latching relay, D2, R5 and Q5 is required to set / reset relay. JP1 should be linked where indicated on the board.
 
+# Notes about firmware
+* From v2.1.2d, there are two different firmware versions. Standard and "NO_EEPROM".
+* The Standard version allows settings and values to be saved, so you can cold-boot in a swapped state or change the drive swap time.
+* The NO_EEPROM version writes nothing to the microcontroller, therefore eliminating possible "wear" from changing settings. 
+* Though you can change the settings tens of thousands of times before a possibility of problems. This should be called the "paranoid" version.
+* NO_EEPROM will always cold-boot in an unswapped "stock" state. Change to swapped drives the usual way (with CRTL A A). This state will remain until Amiga is powered off. You cannot change the user drive swap timer as the value won't be saved.
+
 # User Guide
 * Remove even CIA from motherboard and fit into OpenSwitcher, ensuring correct orientation. Fit OpenSwitcher back into motherboard, ensuring pins are sitting in CIA socket.
 * Fit wire from J1 pin 2 (marked on board) to CN13 pin 3 (keyboard header). It should be piggybacked onto the connection. Don't cut any wires! Or if you do cut, make sure you join them together again
