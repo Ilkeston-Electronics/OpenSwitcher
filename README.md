@@ -18,14 +18,14 @@ There are lots of (very simple) Amiga drive switcher projects out there. This on
 To build a quality Amiga drive swapper out of "off the shelf" parts, easily available and easily programmable. Also have the internal drive functioning as DF1 via correct drive ID timing during switching.
 
 # But why?
-Our Amigas deserve the best. All other drive swapping projects I have seen have the following caveats... Drilling holes, fitting switches, programming PIC chips, fitting surface-mount components, internal drive not working... This project aims to address all those.
-Amigas are very fussy about which drive we run from. DF1 is a bootable drive, but it isn't DF0. Which is sadly hard-coded into the software, leading to problems.
+All other drive swapping projects I have seen have the following caveats... Drilling holes, fitting switches, programming PIC chips, fitting surface-mount components, internal drive not working... This project aims to address all those.
+Amigas are very fussy about which drive we run from. DF1 is a bootable drive, but it isn't DF0. Which in some cases, is sadly hard-coded into the software, leading to problems.
 
 # Working Principle
 How does this work?
 OK... There are 2 lines we need to swap, which are SEL0 and SEL1. Simple enough...
 
-This project uses an Adafruit Trinket M0 microcontroller.
+This project uses an Adafruit Trinket M0 microcontroller or a Raspberry Pi Pico.
 
 This uses a relay so any signal is "pure", ie it is just like swapping the SEL points with solder or a switch. The SEL signal is passed through the relay just as it left the CIA.
 This switching is controlled by the Trinket, which has levels corrected by the transistors, which then goes to the relays.
@@ -47,11 +47,11 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 4 (or 5) x KSP2222 or similar NPN BJT transistor
 * 4 (or 5) 1/8 watt resistors (if you can find them. 1/4 watt if not).
 * 1 (or 2) x 1n4148 or similar diode
-* 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
+* 1 x Adafruit Trinket M0 (recommended), or Raspberry Pi Pico
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
-* 2 x 5 male pin header (2.54mm pitch supplied with Trinket)
-* 2 x 5 female pin header (2.54mm pitch to plug Trinket in to, or solder Trinket into board)
+* 2 x 6 male pin header
+* 2 x 6 female pin header
 
 # Component Locations - Large Through-hole version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
@@ -60,7 +60,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * D1, D2 - 1N4148 diode
 * R1, R2, R3, R4, R5 - 1K resistor
 * Q1, Q2, Q3, Q4, Q5 - KSP2222 npn BJT transistor(600mA, 40v)
-* P1 - Adafruit Trinket M0
+* PH1, PH2, PT1, PT2 - Headers for Adafruit Trinket M0 or Pi Pico
 * J1 - 1 x 2 header pin
 * JP1 - 1 x 3 header pin (optional)
 
@@ -74,8 +74,8 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * 1 x Adafruit Trinket M0 (recommended), though classic Trinket (3v and 5v are / will be supported)
 * 1 x 2 pin header 2.54mm pitch
 * 1 x DuPont cable female-soldered end (or female to male, to insert into keyboard connector pin 3
-* 2 x 5 male pin header (2.54mm pitch supplied with Trinket)
-* 2 x 5 female pin header (2.54mm pitch to plug Trinket in to, or solder Trinket into board)
+* 2 x 6 male pin header
+* 2 x 6 female pin header
 
 # Component Locations - Slim SMD version
 * U1 - Dual-wipe 40 pin IC socket or 2x20 female turned pin
@@ -84,7 +84,7 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * D1, D2 - 1N4148 diode
 * R1, R2, R3, R4, R5 - 1K 0402 0.06w resistor
 * Q1, Q2, Q3, Q4, Q5 - BC817-40 npn BJT transistor(500mA, 45v)
-* P1 - Adafruit Trinket M0
+* PH1, PH2, PT1, PT2 - Headers for Adafruit Trinket M0 or Pi Pico
 * J1 - 1 x 2 header pin
 * JP1 - 1 x 3 header pin (optional)
 
@@ -128,11 +128,19 @@ If you fit CIA socket and underside pins and nothing else, you can fit header pi
 * START
 * Upon power on, unconnected (ie plugged into PC), red light will be flashing. This means successfully flashed... Please plug into OpenSwitcher.
 * This will ONLY HAPPEN ONCE on FIRST INSTALL INTO OpenSwitcher! Upon Amiga power-on, white LED should flash 3 times. Identify relay, program virtual Eeprom with default values. When white LED flash 3 times This indicates setup is correct.
-* Upon Green LED, drive ID successful, booting in a stock unswapped condition
-* Upon Blue LED, drive ID successful, booting in swapped condition.
-* LED off after 8 seconds approx = OpenSwitcher is asleep.
-* Upon Amiga RESET, pink LED, reboot successful, go back to start.
-* If Amiga RESET is HELD for approx 3 seconds, White LED will blink 3 times. If in a swapped condition, will become unswapped. If unswapped, will be swapped. Stored to Eeprom.
+* Upon Green LED(single flash), drive ID successful, booting in a stock unswapped condition
+* Upon Blue LED(2 flashes), drive ID successful, booting in swapped condition.
+* Upon Turquoise LED(3 flashes), drive ID successful, booting in swapped condition.
+* LED off after 4 seconds approx = OpenSwitcher is asleep.
+* Below v2.1.3 - If Amiga RESET is HELD for approx 3 seconds, White LED will blink 3 times. If in a swapped condition, will become unswapped. If unswapped, will be swapped. Stored to Eeprom.
+* Above v.1.3 - Hold Amiga reset until desired mode is obtained, then let go.
+* 1 x long (green) flash - Stock condition.
+* 2 x (blue) flashes - Swapped condition. Internal is DF1, external is DF0.
+* 3 x (turquoise) flashes - Internal is disabled (if you don't have internal drive fitted), External is DF0. This speeds up boot on Amigas without an internal drive.
+* 4 x (amber) flashes - A 1 second timer will begin blinking... blink...blink...etc. If you count along the blinks and press [CTRL][A][A], your "mode change" time will become this value...
+* eg press [CTRL][A][A] after 2 blinks, drive mode change is now after 2 seconds of holding [CTRL][A][A]. Now if you hold [CTRL][A][A], drive swap modes active after 2 seconds.
+* eg press [CTRL][A][A] after 1 blink, drive mode change is now after 1 second of holding [CTRL][A][A]. Now if you hold [CTRL][A][A], drive swap modes active after 1 second.
+* eg press [CTRL][A][A] after 5 blinks, drive mode change is now after 5 seconds of holding [CTRL][A][A]. Now if you hold [CTRL][A][A], drive swap modes active after 5 seconds.
 * That is all
 
 # ADDENDUM
