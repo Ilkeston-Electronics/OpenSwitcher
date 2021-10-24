@@ -1,7 +1,7 @@
 //v2.1.3a
 
 //What relay is fitted to your board?
-#define LATCHING_RELAY // If latching relay fitted, UNCOMMENT. If not, comment out.
+//#define LATCHING_RELAY // If latching relay fitted, UNCOMMENT. If not, comment out.
 
 //Some handy board defaults...
 //Trinket
@@ -392,10 +392,17 @@ void setup() {
   strip.show();
 #endif
   pinMode(led_pin, OUTPUT);
+  #ifndef LATCHING_RELAY
+  if (digitalRead(cia_sel0) == HIGH)
+  {
+    while (digitalRead(cia_sel0) == HIGH) led_flash(2, 0, 0, 1, 50000, 475000);
+  }
+  #else
   if (digitalRead(cia_sel0) == HIGH)
   {
     while (digitalRead(cia_sel0) == HIGH) led_flash(2, 0, 0, 1, 50000, 950000);
   }
+  #endif
 #ifdef LATCHING_RELAY
   latching_relay = true;
   pinMode(relaypin2, OUTPUT);
